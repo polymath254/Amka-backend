@@ -1,3 +1,8 @@
 from django.test import TestCase
+from .models import GalleryCategory, GalleryImage
 
-# Create your tests here.
+class GalleryModelTest(TestCase):
+    def test_category_creation(self):
+        cat = GalleryCategory.objects.create(name="Moments", slug="moments")
+        self.assertEqual(str(cat), "Moments")
+
